@@ -1,0 +1,42 @@
+version: '3.1'
+services:
+  web:
+    build:
+      context: ./docker/web
+    volumes:
+      - ./public:/var/www/html
+      - .:/var/www
+    ports:
+      - "8080:80"
+    links:
+      - redis
+    tty: true
+    stdin_open: true
+
+  cron:
+    build:
+      context: ./docker/cron
+    volumes:
+      - ./public:/var/www/html
+      - .:/var/www
+    links:
+      - redis
+
+  redis:
+    image: redis:latest
+    expose:
+      - 6379
+
+  echo:
+    build:
+      context: ./docker/echo
+    ports:
+      - 8234:8234
+    expose:
+      - 8234
+    links:
+      - redis
+      - web
+    volumes:
+      - ./public:/var/www/html
+      - .:/var/www
