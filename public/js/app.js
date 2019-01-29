@@ -29166,7 +29166,7 @@ var formatData = function formatData(streams) {
       name: stream.name,
       id: stream.id,
       data: [{
-        name: 'Viewers',
+        name: "Viewers",
         data: stream.stats
       }]
     };
@@ -29193,14 +29193,13 @@ var getBounds = function getBounds(streams) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['streamdata'],
+  props: ["streamdata"],
   mounted: function mounted() {
     var _this = this;
 
-    window.Echo.channel('stats-event').listen('.SmashStreams.StatsUpdate', function (e) {
+    window.Echo.channel("stats-event").listen(".SmashStreams.StatsUpdate", function (e) {
       _this.streamData = e.stats;
       _this.bounds = getBounds(e.stats);
-      console.log("wowoowo", _this.bounds);
     });
   },
   computed: {
@@ -81569,7 +81568,7 @@ var render = function() {
                 { key: stream.id },
                 [
                   _vm._v(
-                    "\n                        " +
+                    "\n            " +
                       _vm._s(
                         rank +
                           1 +
@@ -81581,7 +81580,7 @@ var render = function() {
                           ][1] +
                           " Viewers"
                       ) +
-                      "\n                        "
+                      "\n            "
                   ),
                   _c("apexchart", {
                     attrs: {
@@ -93012,10 +93011,10 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //window.
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_apexcharts__WEBPACK_IMPORTED_MODULE_1___default.a);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('apexchart', vue_apexcharts__WEBPACK_IMPORTED_MODULE_1___default.a);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('smashgraphs', __webpack_require__(/*! ./components/SmashGraphs.vue */ "./resources/js/components/SmashGraphs.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("apexchart", vue_apexcharts__WEBPACK_IMPORTED_MODULE_1___default.a);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("smashgraphs", __webpack_require__(/*! ./components/SmashGraphs.vue */ "./resources/js/components/SmashGraphs.vue").default);
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
-  el: '#app'
+  el: "#app"
 });
 
 /***/ }),
@@ -93051,7 +93050,7 @@ try {
 
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just
@@ -93061,9 +93060,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
-  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+  window.axios.defaults.headers.common["X-CSRF-TOKEN"] = token.content;
 } else {
-  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+  console.error("CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token");
 }
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
@@ -93075,8 +93074,8 @@ if (token) {
 
 window.io = __webpack_require__(/*! socket.io-client */ "./node_modules/socket.io-client/lib/index.js");
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
-  broadcaster: 'socket.io',
-  host: window.location.hostname + ':8234',
+  broadcaster: "socket.io",
+  host: window.location.hostname + ":8234",
   namespace: null
 }); // window.Pusher = require('pusher-js');
 // window.Echo = new Echo({
@@ -93170,7 +93169,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(date_fns__WEBPACK_IMPORTED_MODULE_0__);
 
 /* harmony default export */ __webpack_exports__["default"] = (function (bounds) {
-  console.log("Calculating chart options", bounds.xmin, bounds.xmax);
   return {
     chart: {
       animations: {
@@ -93180,7 +93178,7 @@ __webpack_require__.r(__webpack_exports__);
       zoom: {
         enabled: false
       },
-      type: 'line',
+      type: "line",
       toolbar: {
         show: false
       }
@@ -93189,33 +93187,33 @@ __webpack_require__.r(__webpack_exports__);
       enabled: false
     },
     grid: {
-      borderColor: '#eee'
+      borderColor: "#eee"
     },
     markers: {
       radius: 1,
       strokeWidth: 0,
       size: 1,
-      colors: '#fff',
+      colors: "#fff",
       fillOpacity: 0.3
     },
     stroke: {
-      curve: 'straight',
+      curve: "straight",
       width: 2
     },
     tooltip: {
       x: {
-        format: 'hh:mm'
+        format: "hh:mm"
       }
     },
     xaxis: {
       labels: {
         formatter: function formatter(val) {
           var date = new Date(val);
-          return "".concat(Object(date_fns__WEBPACK_IMPORTED_MODULE_0__["format"])(date, 'hh:mm'));
+          return "".concat(Object(date_fns__WEBPACK_IMPORTED_MODULE_0__["format"])(date, "hh:mm"));
         },
         offsetX: -4
       },
-      type: 'datetime'
+      type: "datetime"
     },
     yaxis: {
       min: 0
