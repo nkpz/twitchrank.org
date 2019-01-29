@@ -1,55 +1,54 @@
-import { format } from 'date-fns';
+import { format } from "date-fns";
 
-export default (bounds) => {
-    console.log("Calculating chart options", bounds.xmin, bounds.xmax);
+export default bounds => {
     return {
         chart: {
             animations: {
-                enabled: false,
+                enabled: false
             },
             height: 150,
             zoom: {
-                enabled: false,
+                enabled: false
             },
-            type: 'line',
+            type: "line",
             toolbar: {
-                show: false,
-            },
+                show: false
+            }
         },
         dataLabels: {
             enabled: false
         },
         grid: {
-            borderColor: '#eee',
+            borderColor: "#eee"
         },
         markers: {
             radius: 1,
             strokeWidth: 0,
             size: 1,
-            colors: '#fff',
-            fillOpacity: 0.3,
+            colors: "#fff",
+            fillOpacity: 0.3
         },
         stroke: {
-            curve: 'straight',
+            curve: "straight",
             width: 2
         },
         tooltip: {
             x: {
-                format: 'hh:mm',
+                format: "hh:mm"
             }
         },
         xaxis: {
             labels: {
-                formatter: (val) => {
+                formatter: val => {
                     const date = new Date(val);
-                    return `${format(date, 'hh:mm')}`;
+                    return `${format(date, "hh:mm")}`;
                 },
-                offsetX: -4,
+                offsetX: -4
             },
-            type: 'datetime',
+            type: "datetime"
         },
         yaxis: {
-            min: 0,
+            min: 0
         }
-    }
+    };
 };

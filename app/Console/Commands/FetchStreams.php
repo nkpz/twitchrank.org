@@ -38,13 +38,13 @@ class FetchStreams extends Command
         $timestamp = time();
 
         $cachedStreams = json_decode(Redis::get('smashstreams:stats'), true);
-        $lastFetch= (int)Redis::get('smashstreams:last-fetch');
+        $lastFetch = (int) Redis::get('smashstreams:last-fetch');
 
         $ssbuStreams = TwitchApi::streams([
             'game' => 'Super Smash Bros. Ultimate',
         ]);
 
-        $updatedStats = collect($ssbuStreams['streams'])->map(function($stream) use ($cachedStreams, $timestamp) {
+        $updatedStats = collect($ssbuStreams['streams'])->map(function ($stream) use ($cachedStreams, $timestamp) {
             $pastStreamData = [];
 
             // Prepare a payload that can be used in the front end graphing lib
@@ -56,7 +56,7 @@ class FetchStreams extends Command
             ];
 
             if ($cachedStreams !== null) {
-                foreach($cachedStreams as $cachedStream) {
+                foreach ($cachedStreams as $cachedStream) {
                     if ($stream['channel']['_id'] === $cachedStream['id']) {
                         // Only store the last 240 entries (60 minutes of data)
                         $stats = array_slice(array_merge($cachedStream['stats'], $stats), -240);
@@ -86,9 +86,9 @@ class FetchStreams extends Command
      */
     public function handle()
     {
-        /* Laravel doesn't support scheduling in seconds, so 
+        /* Laravel doesn't support scheduling in seconds, so
          * this ugly sequence of sleeps can be used as a workaround. */
-        foreach(range(1,4) as $iter) {
+        foreach (range(1, 4) as $iter) {
             $this->fetchStreams();
             sleep(15);
         }
