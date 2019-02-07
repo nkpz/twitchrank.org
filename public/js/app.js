@@ -33949,7 +33949,7 @@ module.exports = (function() {
 
 var base64 = __webpack_require__(/*! base64-js */ "./node_modules/base64-js/index.js")
 var ieee754 = __webpack_require__(/*! ieee754 */ "./node_modules/ieee754/index.js")
-var isArray = __webpack_require__(/*! isarray */ "./node_modules/isarray/index.js")
+var isArray = __webpack_require__(/*! isarray */ "./node_modules/buffer/node_modules/isarray/index.js")
 
 exports.Buffer = Buffer
 exports.SlowBuffer = SlowBuffer
@@ -35728,6 +35728,22 @@ function isnan (val) {
 }
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./node_modules/buffer/node_modules/isarray/index.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/buffer/node_modules/isarray/index.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var toString = {}.toString;
+
+module.exports = Array.isArray || function (arr) {
+  return toString.call(arr) == '[object Array]';
+};
+
 
 /***/ }),
 
@@ -47157,7 +47173,7 @@ module.exports = {
  * Module requirements.
  */
 
-var isArray = __webpack_require__(/*! isarray */ "./node_modules/has-binary2/node_modules/isarray/index.js");
+var isArray = __webpack_require__(/*! isarray */ "./node_modules/isarray/index.js");
 
 var toString = Object.prototype.toString;
 var withNativeBlob = typeof Blob === 'function' ||
@@ -47217,22 +47233,6 @@ function hasBinary (obj) {
 }
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../buffer/index.js */ "./node_modules/buffer/index.js").Buffer))
-
-/***/ }),
-
-/***/ "./node_modules/has-binary2/node_modules/isarray/index.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/has-binary2/node_modules/isarray/index.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var toString = {}.toString;
-
-module.exports = Array.isArray || function (arr) {
-  return toString.call(arr) == '[object Array]';
-};
-
 
 /***/ }),
 
@@ -80677,7 +80677,7 @@ function url (uri, loc) {
  * Module requirements
  */
 
-var isArray = __webpack_require__(/*! isarray */ "./node_modules/socket.io-parser/node_modules/isarray/index.js");
+var isArray = __webpack_require__(/*! isarray */ "./node_modules/isarray/index.js");
 var isBuf = __webpack_require__(/*! ./is-buffer */ "./node_modules/socket.io-parser/is-buffer.js");
 var toString = Object.prototype.toString;
 var withNativeBlob = typeof Blob === 'function' || (typeof Blob !== 'undefined' && toString.call(Blob) === '[object BlobConstructor]');
@@ -80831,7 +80831,7 @@ exports.removeBlobs = function(data, callback) {
 var debug = __webpack_require__(/*! debug */ "./node_modules/debug/src/browser.js")('socket.io-parser');
 var Emitter = __webpack_require__(/*! component-emitter */ "./node_modules/component-emitter/index.js");
 var binary = __webpack_require__(/*! ./binary */ "./node_modules/socket.io-parser/binary.js");
-var isArray = __webpack_require__(/*! isarray */ "./node_modules/socket.io-parser/node_modules/isarray/index.js");
+var isArray = __webpack_require__(/*! isarray */ "./node_modules/isarray/index.js");
 var isBuf = __webpack_require__(/*! ./is-buffer */ "./node_modules/socket.io-parser/is-buffer.js");
 
 /**
@@ -81271,22 +81271,6 @@ function isBuf(obj) {
 }
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../buffer/index.js */ "./node_modules/buffer/index.js").Buffer))
-
-/***/ }),
-
-/***/ "./node_modules/socket.io-parser/node_modules/isarray/index.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/socket.io-parser/node_modules/isarray/index.js ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var toString = {}.toString;
-
-module.exports = Array.isArray || function (arr) {
-  return toString.call(arr) == '[object Array]';
-};
-
 
 /***/ }),
 
@@ -93241,8 +93225,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/phido/code/twitchrank/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/phido/code/twitchrank/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/ubuntu/projects/twitchrank/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/ubuntu/projects/twitchrank/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ }),
