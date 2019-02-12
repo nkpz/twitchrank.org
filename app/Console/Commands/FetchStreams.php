@@ -58,8 +58,8 @@ class FetchStreams extends Command
             if ($cachedStreams !== null) {
                 foreach ($cachedStreams as $cachedStream) {
                     if ($stream['channel']['_id'] === $cachedStream['id']) {
-                        // Only store the last 240 entries (60 minutes of data)
-                        $stats = array_slice(array_merge($cachedStream['stats'], $stats), -240);
+                        // Only store the last 240 entries (2 hours of data)
+                        $stats = array_slice(array_merge($cachedStream['stats'], $stats), -1 * env('MIX_MAX_RECORDS', 480));
                         break;
                     }
                 }

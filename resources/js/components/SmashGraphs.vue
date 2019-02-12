@@ -33,7 +33,7 @@
 import getChartOptions from "../util/getChartOptions";
 
 // Number of data points we store in Redis before shifting
-const MAX_POINTS = 240;
+const MAX_POINTS = process.env.MIX_MAX_RECORDS;
 
 const formatData = streams => {
   return streams.map(stream => ({
