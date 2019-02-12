@@ -31,9 +31,9 @@ services:
     build:
       context: ./docker/echo
     ports:
-      - 8234:8234
+      - 2096:2096
     expose:
-      - 8234
+      - 2096
     links:
       - redis
       - web

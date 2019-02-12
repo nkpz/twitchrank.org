@@ -51,7 +51,7 @@ import Echo from "laravel-echo";
 window.io = require("socket.io-client");
 window.Echo = new Echo({
   broadcaster: "socket.io",
-  host: window.location.hostname + ":8234",
+  host: window.location.hostname + ":2096",
   namespace: null
 });
 // window.Pusher = require('pusher-js');

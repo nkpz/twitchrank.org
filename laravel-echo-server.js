@@ -15,11 +15,10 @@ require("laravel-echo-server").run({
       databasePath: "/database/laravel-echo-server.sqlite"
     }
   },
-  devMode: true,
+  devMode: false,
   host: null,
-  port: "8234",
-  protocol: env.APP_ENV === "production" ? "https" : "http",
-  socketio: {},
+  port: "2096",
+  protocol: "https",
   sslCertPath: "keys/cert.pem",
   sslKeyPath: "keys/key.pem",
   sslCertChainPath: "",
@@ -29,9 +28,9 @@ require("laravel-echo-server").run({
     redis: true
   },
   apiOriginAllow: {
-    allowCors: false,
-    allowOrigin: "",
-    allowMethods: "",
-    allowHeaders: ""
+    allowCors: true,
+    allowOrigin: "https://smashstreams.com,https://www.smashstreams.com,http://192.168.21.21",
+    allowMethods: "GET, POST",
+    allowHeaders: "Origin, Content-Type, X-Auth-Token, X-Requested-With, Accept, Authorization, X-CSRF-TOKEN, X-Socket-Id"
   }
 });
