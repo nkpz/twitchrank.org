@@ -11,7 +11,7 @@ docker-compose
 
 `php artisan key:generate`
 
-Enter your Twitch API credentials
+Enter your Twitch API credentials in .env
 
 ### Run
 `docker-compose up -d`
