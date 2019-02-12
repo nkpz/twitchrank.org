@@ -13,7 +13,7 @@ cron - Schedules calls to the Twitch API to update stream data
 redis - Stores stream data in memory
 
 ### Demo
-http://www.smashstreams.com/
+https://www.smashstreams.com/
 
 ### Requirements
 docker
