@@ -29,7 +29,7 @@ docker-compose
 
 *Use the output to set APP_KEY in .env*
 
-Enter your Twitch API credentials in .env
+*Enter your Twitch API credentials in .env*
 
 ### Run
 `docker-compose up -d`
