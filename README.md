@@ -23,9 +23,9 @@ docker-compose
 ### Build
 `mv .env.example .env`
 
-`php artisan key:generate`
+`npm run keygen`
 
-*If PHP is not installed on the host, you run php commands from the web container using `npm run bash`*
+*Use the output to set APP_KEY in .env*
 
 Enter your Twitch API credentials in .env
 
