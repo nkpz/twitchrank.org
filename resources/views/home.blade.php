@@ -15,7 +15,6 @@
                     <div class="col-md-12">
                         <div class="card card-default">
                             <div class="card-body">
-                                <script src="https://embed.twitch.tv/embed/v1.js"></script>
                                 <header>SmashStreams</header>
                                 <smashgraphs streamdata={{ $data }} />
                             </div>
@@ -24,6 +23,7 @@
                 </div>
             </div>
         </div>
+        <script src="https://embed.twitch.tv/embed/v1.js"></script>
         <script src="{{ mix('js/app.js') }}"></script>
     </body>
 </html>
