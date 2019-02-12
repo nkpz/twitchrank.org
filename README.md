@@ -1,3 +1,5 @@
+Side project for learning how Vue works. Uses Docker, Laravel, Redis for storing stream data, and Laravel Echo for updating graphs over a websocket
+
 ### Demo
 http://www.smashstreams.com/
 
