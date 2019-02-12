@@ -12,12 +12,12 @@
             <smashgraph :options="chartOptions" :chartData="stream.data" :height="60"/>
           </div>
           <div class="col-md-4">
-            <img
+            <v-lazy-image
               v-on:click="showStream(stream.name)"
               class="smashstreams__thumbnail"
               :data-name="stream.name"
               :src="stream.thumbnail"
-            >
+            />
           </div>
         </div>
         <div class="row">
