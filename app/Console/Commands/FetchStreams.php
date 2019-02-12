@@ -67,7 +67,8 @@ class FetchStreams extends Command
 
             return [
                 'stats' => $stats,
-                'name' => $stream['channel']['display_name'],
+                'display_name' => $stream['channel']['display_name'],
+                'name' => $stream['channel']['name'],
                 'id' => $stream['channel']['_id'],
                 'thumbnail' => $stream['preview']['medium'],
                 'url' => $stream['channel']['url'],

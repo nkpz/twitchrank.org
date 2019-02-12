@@ -6,7 +6,7 @@
           <div class="col-md-8">
             <span class="smashstreams__graph-label">
               <span>{{rank+1}}.</span>
-              <a :href="stream.url">{{stream.name}}</a>
+              <a :href="stream.url">{{stream.display_name}}</a>
               <span>- {{getViewers(stream)}} Viewers</span>
             </span>
             <smashgraph :options="chartOptions" :chartData="stream.data" :height="80"/>
@@ -39,6 +39,7 @@ const formatData = streams => {
   return streams.map(stream => ({
     thumbnail: stream.thumbnail,
     url: stream.url,
+    display_name: stream.display_name,
     name: stream.name,
     id: stream.id,
     data: {
