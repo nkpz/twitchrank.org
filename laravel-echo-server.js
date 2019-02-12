@@ -18,7 +18,7 @@ require("laravel-echo-server").run({
   devMode: false,
   host: null,
   port: "2096",
-  protocol: "https",
+  protocol: env.APP_ENV === 'production' ? "https" : 'http',
   sslCertPath: "keys/cert.pem",
   sslKeyPath: "keys/key.pem",
   sslCertChainPath: "",
