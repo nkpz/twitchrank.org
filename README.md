@@ -1,3 +1,6 @@
+### Live
+https://www.smashstreams.com/
+
 **Smashstreams stores and graphs viewer counts for the top 25 users streaming Smash Ultimate on Twitch.**
 
 Uses Vue, Docker, Docker Compose, Laravel, Twitch API, Redis for storing stream data, and Laravel Echo for updating graphs over a websocket.
@@ -12,10 +15,7 @@ cron - Schedules calls to the Twitch API to update stream data
 
 redis - Stores stream data in memory
 
-### Demo
-https://www.smashstreams.com/
-
-### Requirements
+### Build requirements
 docker
 
 docker-compose
