@@ -9,7 +9,7 @@
               <a :href="stream.url">{{stream.name}}</a>
               <span>- {{getViewers(stream)}} Viewers</span>
             </span>
-            <smashgraph :options="chartOptions" :chartData="stream.data" :height="60"/>
+            <smashgraph :options="chartOptions" :chartData="stream.data" :height="80"/>
           </div>
           <div class="col-md-4">
             <img
