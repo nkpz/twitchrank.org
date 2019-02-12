@@ -1,7 +1,7 @@
 ### Live
 https://www.smashstreams.com/
 
-**Smashstreams stores and graphs viewer counts for the top 25 users streaming Smash Ultimate on Twitch.**
+Smashstreams stores and graphs viewer counts for the top 25 users streaming Smash Ultimate on Twitch.
 
 Uses Vue, Docker, Docker Compose, Laravel, Twitch API, Redis for storing stream data, and Laravel Echo for updating graphs over a websocket.
 
