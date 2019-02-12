@@ -9,7 +9,7 @@ The docker-compose configuration creates four containers:
 
 web - Serves the application on port 80 using Apache
 
-echo - Maintains a websocket connection with clients and provides updated stream data
+echo - Websocket server that provides updated stream data to clients. Uses port 2096
 
 cron - Schedules calls to the Twitch API to update stream data
 
