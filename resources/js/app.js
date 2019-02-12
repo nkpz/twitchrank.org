@@ -1,12 +1,19 @@
 require("./bootstrap");
 //window.Vue = require('vue');
 import Vue from "vue";
+import VueLazyload from 'vue-lazyload'
 
-import VueApexCharts from "vue-apexcharts";
+Vue.use(VueLazyload, {
+  observer: true,
+  observerOptions: {
+    rootMargin: '180px',
+    threshold: 0.5
+  },
+});
 
-Vue.use(VueApexCharts);
+import SmashGraph from "./components/SmashGraph";
 
-Vue.component("apexchart", VueApexCharts);
+Vue.component("smashgraph", SmashGraph);
 Vue.component("smashgraphs", require("./components/SmashGraphs.vue").default);
 
 const app = new Vue({
