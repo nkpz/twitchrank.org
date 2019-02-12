@@ -101,7 +101,8 @@ export default {
           new Twitch.Embed("twitch-embed", {
             width: Math.min(window.innerWidth, 854),
             height: 320,
-            channel: streamName
+            channel: streamName,
+            theme: 'dark',
           });
         }
       });
