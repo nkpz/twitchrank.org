@@ -7,13 +7,13 @@ Uses Vue, Docker, Docker Compose, Laravel, Twitch API, Redis for storing stream 
 
 The docker-compose configuration creates four containers:
 
-web - Serves the application on port 80 using Apache
+◼ web - Serves the application on port 80 using Apache
 
-echo - Websocket server that provides updated stream data to clients. Uses port 2096
+◼ echo - Websocket server that provides updated stream data to clients. Uses port 2096
 
-cron - Schedules calls to the Twitch API to update stream data
+◼ cron - Schedules calls to the Twitch API to update stream data
 
-redis - Stores stream data in memory
+◼ redis - Stores stream data in memory
 
 ### Build requirements
 docker
