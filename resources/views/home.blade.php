@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-        <script src="https://embed.twitch.tv/embed/v1.js"></script>
         <script src="{{ mix('js/app.js') }}"></script>
+        <script src="https://embed.twitch.tv/embed/v1.js"></script>
     </body>
 </html>
