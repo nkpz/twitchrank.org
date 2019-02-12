@@ -2,11 +2,9 @@ require("./bootstrap");
 //window.Vue = require('vue');
 import Vue from "vue";
 
-import VueApexCharts from "vue-apexcharts";
+import SmashGraph from "./components/SmashGraph";
 
-Vue.use(VueApexCharts);
-
-Vue.component("apexchart", VueApexCharts);
+Vue.component("smashgraph", SmashGraph);
 Vue.component("smashgraphs", require("./components/SmashGraphs.vue").default);
 
 const app = new Vue({

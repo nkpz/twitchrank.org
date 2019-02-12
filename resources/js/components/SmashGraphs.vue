@@ -1,13 +1,28 @@
 <template>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="card card-default">
-          <div class="card-body">
-            <div v-for="(stream, rank) in stats" :key="stream.id">
-              {{`${rank+1}. ${stream.name} - ${stream.data[0].data[stream.data[0].data.length-1][1]} Viewers`}}
-              <apexchart type="line" height="150" :options="chartOptions" :series="stream.data"/>
-            </div>
+  <div>
+    <div v-for="(stream, rank) in stats" :key="stream.id">
+      <div class="smashstreams__graph">
+        <div class="row">
+          <div class="col-md-8">
+            <span class="smashstreams__graph-label">
+              <span>{{rank+1}}.</span>
+              <a :href="stream.url">{{stream.name}}</a>
+              <span>- {{getViewers(stream)}} Viewers</span>
+            </span>
+            <smashgraph :options="chartOptions" :chartData="stream.data" :height="60"/>
+          </div>
+          <div class="col-md-4">
+            <img
+              v-on:click="showStream(stream.name)"
+              class="smashstreams__thumbnail"
+              :data-name="stream.name"
+              :src="stream.thumbnail"
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div v-if="activeStream === stream.name" id="twitch-embed"></div>
           </div>
         </div>
       </div>
@@ -18,19 +33,33 @@
 <script>
 import getChartOptions from "../util/getChartOptions";
 
-// Number of data points we store in Redis before popping
+// Number of data points we store in Redis before shifting
 const MAX_POINTS = 240;
 
 const formatData = streams => {
   return streams.map(stream => ({
+    thumbnail: stream.thumbnail,
+    url: stream.url,
     name: stream.name,
     id: stream.id,
-    data: [
-      {
-        name: "Viewers",
-        data: stream.stats
-      }
-    ]
+    data: {
+      labels: stream.stats.map(stat => stat[0]),
+      datasets: [
+        {
+          label: "Viewers",
+          backgroundColor: "#53b0fd",
+          borderColor: "#53b0fd",
+          borderWidth: 2,
+          fill: false,
+          lineTension: 0,
+          spanGaps: false,
+          pointRadius: 2,
+          pointBorderWidth: 0,
+          pointStyle: "line",
+          data: stream.stats.map(stat => stat[1])
+        }
+      ]
+    }
   }));
 };
 
@@ -40,6 +69,7 @@ const getBounds = streams => {
   streams.some(stream => {
     if (stream.stats.length > longestRecord.length) {
       longestRecord = stream.stats;
+
       if (stream.stats.length === MAX_POINTS) {
         return true;
       }
@@ -64,6 +94,22 @@ export default {
       }
     );
   },
+  methods: {
+    showStream(streamName) {
+      this.activeStream = this.activeStream === streamName ? null : streamName;
+      this.$nextTick(() => {
+        if (this.activeStream !== null) {
+          new Twitch.Embed("twitch-embed", {
+            width: Math.min(window.innerWidth, 854),
+            height: 320,
+            channel: streamName
+          });
+        }
+      });
+    },
+    getViewers: stream =>
+      stream.data.datasets[0].data[stream.data.datasets[0].data.length - 1]
+  },
   computed: {
     stats() {
       return formatData(this.streamData);
@@ -78,7 +124,8 @@ export default {
 
     return {
       streamData,
-      bounds
+      bounds,
+      activeStream: null
     };
   }
 };

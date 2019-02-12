@@ -1,14 +1,59 @@
-
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 .navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.github-badge {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#twitch-embed {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#app {
+    header {
+        font-family: bebas-neue, sans-serif;
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        border: 1px solid #f1f1f1;
+    }
+
+    .smashstreams__ {
+        &graph {
+            margin: 30px 0;
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 3px;
+
+            canvas {
+              margin-top: 20px;
+            }
+        }
+
+        &graph-label {
+            font-family: gudea, sans-serif;
+            font-size: 18px;
+        }
+
+        &thumbnail {
+            cursor: pointer;
+        }
+    }
 }

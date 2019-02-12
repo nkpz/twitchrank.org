@@ -69,6 +69,8 @@ class FetchStreams extends Command
                 'stats' => $stats,
                 'name' => $stream['channel']['display_name'],
                 'id' => $stream['channel']['_id'],
+                'thumbnail' => $stream['preview']['medium'],
+                'url' => $stream['channel']['url'],
             ];
         });
 
