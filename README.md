@@ -21,6 +21,8 @@ docker
 docker-compose
 
 ### Build
+`docker-compose up -d`
+
 `mv .env.example .env`
 
 `npm run keygen`
