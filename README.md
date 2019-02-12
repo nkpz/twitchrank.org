@@ -1,3 +1,6 @@
+### Demo
+http://www.smashstreams.com/
+
 ### Requirements
 docker
 docker-compose
