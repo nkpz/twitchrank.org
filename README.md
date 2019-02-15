@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/nnjpp/smashstreams.svg?branch=develop)](https://travis-ci.com/nnjpp/smashstreams)
+
 ### Live
 https://www.smashstreams.com/
 
