@@ -11,9 +11,6 @@ Vue.use(VueLazyload, {
   },
 });
 
-import SmashGraph from "./components/SmashGraph";
-
-Vue.component("smashgraph", SmashGraph);
 Vue.component("smashgraphs", require("./components/SmashGraphs.vue").default);
 
 const app = new Vue({
