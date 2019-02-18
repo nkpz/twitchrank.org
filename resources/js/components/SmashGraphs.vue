@@ -31,6 +31,7 @@
 
 <script>
 import getChartOptions from "../util/getChartOptions";
+import SmashGraph from "./SmashGraph";
 
 // Number of data points we store in Redis before shifting
 const MAX_POINTS = process.env.MIX_MAX_RECORDS;
@@ -110,6 +111,9 @@ export default {
     },
     getViewers: stream =>
       stream.data.datasets[0].data[stream.data.datasets[0].data.length - 1]
+  },
+  components: {
+    smashgraph: SmashGraph,
   },
   computed: {
     stats() {
