@@ -4,14 +4,14 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 
-class Test extends TestCase
+class StatsUpdateTest extends TestCase
 {
     /**
      * A basic test example.
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testStatsUpdate()
     {
         $mock = $this->getMockForTrait('App\Traits\UpdatesStreamData');
 

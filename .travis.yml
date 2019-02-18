@@ -3,10 +3,13 @@ language: php
 php:
   - 7.2
 
-before_script:
+before_install:
   - cp .env.example .env
+  - sudo apt-get install -y nodejs
+
+install:
   - composer install
-  - sudo apt-get install -y nodejs && npm install
+  - npm install
 
 script:
   - ./vendor/bin/phpunit
