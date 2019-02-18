@@ -1,15 +1,15 @@
-matrix:
-    include:
-        - language: node_js
-          node_js:
-            - "10"
-            script:
-            - npm run test-js
+language: php
 
-        - language: php
-          php:
-          - 7.2
-          script:
-          - ./vendor/bin/phpunit
+php:
+  - 7.2
 
+before_install:
+  - sudo apt-get install -y nodejs
 
+install:
+  - composer install
+  - npm install
+
+script:
+  - ./vendor/bin/phpunit
+  - npm run test-js
