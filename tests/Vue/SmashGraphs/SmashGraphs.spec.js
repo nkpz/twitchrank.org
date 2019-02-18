@@ -31,4 +31,12 @@ describe('SmashGraphs', () => {
   it('Renders stream images', () => {
     expect(wrapper.find('img.smashstreams__thumbnail').exists()).toBe(true);
   });
+
+  it('Links to streams', () => {
+    expect(wrapper.html()).toContain('<a href="http://test">');
+  });
+
+  it('Renders the current viewer count', () => {
+    expect(wrapper.find('.smashstreams__graph-label').html()).toContain('125 Viewers');
+  });
 });
