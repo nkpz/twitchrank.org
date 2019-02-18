@@ -1,6 +1,15 @@
-language: node_js
-node_js:
-- "10"
+matrix:
+    include:
+        - language: node_js
+          node_js:
+            - "10"
+            script:
+            - npm run test-js
 
-script:
-- npm run test-js
+        - language: php
+          php:
+          - 7.2
+          script:
+          - ./vendor/bin/phpunit
+
+

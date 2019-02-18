@@ -11,7 +11,8 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "bash": "docker exec -it twitchrank_web_1 /bin/bash",
     "keygen": "docker exec -it twitchrank_web_1  /usr/local/bin/php /var/www/artisan key:generate --show",
-    "test-js": "mocha-webpack --webpack-config=node_modules/laravel-mix/setup/webpack.config.js --require tests/Vue/setup.js tests/Vue/**/*.spec.js"
+    "test-js": "mocha-webpack --webpack-config=node_modules/laravel-mix/setup/webpack.config.js --require tests/Vue/setup.js tests/Vue/**/*.spec.js",
+    "test-php": "docker exec -w /var/www -it twitchrank_web_1  /var/www/vendor/bin/phpunit"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.3.1",
