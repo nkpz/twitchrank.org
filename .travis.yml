@@ -12,5 +12,6 @@ install:
   - npm install
 
 script:
+  - ./vendor/bin/phpunit --list-tests
   - ./vendor/bin/phpunit
   - npm run test-js
