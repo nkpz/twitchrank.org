@@ -1,40 +1,34 @@
-import { shallowMount } from "@vue/test-utils";
-import expect from "expect";
-import SmashGraphs from "../../../resources/js/components/SmashGraphs.vue";
-import moxios from "moxios";
+import { shallowMount } from '@vue/test-utils';
+import expect from 'expect';
+import SmashGraphs from '../../../resources/js/components/SmashGraphs.vue';
+import moxios from 'moxios';
+import streamData from './streamData';
 
-describe("SmashGraphs", () => {
+describe('SmashGraphs', () => {
+  let wrapper;
   beforeEach(() => {
     window.Echo = {
-        channel: () => ({
-            listen: () => null,
-        }),
-    }
+      channel: () => ({
+        listen: () => null
+      })
+    };
     moxios.install(axios);
+    wrapper = shallowMount(SmashGraphs, {
+        propsData: {
+        streamdata: streamData
+        }
+    });
   });
 
   afterEach(() => {
     moxios.uninstall(axios);
   });
 
-  it("Renders the stream's display name", () => {
-    let wrapper = shallowMount(SmashGraphs, {
-        propsData: {
-            streamdata: JSON.stringify([
-                {
-                    thumbnail: 'http://test',
-                    url: 'http://test',
-                    display_name: 'Test Stream',
-                    name: 'teststream',
-                    id: 1,
-                    stats: [
-                        [1550179755,123],
-                        [1550179815,125],
-                    ]
-                }
-            ])
-        }
-    });
-    expect(wrapper.html()).toContain("Test Stream");
+  it('Renders the stream display name', () => {
+    expect(wrapper.html()).toContain('Test Stream');
+  });
+
+  it('Renders stream images', () => {
+    expect(wrapper.find('img.smashstreams__thumbnail').exists()).toBe(true);
   });
 });

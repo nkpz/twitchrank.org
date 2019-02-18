@@ -91,9 +91,9 @@ class FetchStreams extends Command
     {
         /* Laravel doesn't support scheduling in seconds, so
          * this ugly sequence of sleeps can be used as a workaround. */
-        foreach (range(1, 4) as $iter) {
+        foreach (range(1, 6) as $iter) {
             $this->fetchStreams();
-            sleep(15);
+            sleep(10);
         }
     }
 }
