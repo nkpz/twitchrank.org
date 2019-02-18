@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/nnjpp/smashstreams.svg?branch=develop)](https://travis-ci.com/nnjpp/smashstreams)
+## SmashStreams [![Build Status](https://travis-ci.com/nnjpp/smashstreams.svg?branch=develop)](https://travis-ci.com/nnjpp/smashstreams)
 
 ### Live Example
 https://www.smashstreams.com/
