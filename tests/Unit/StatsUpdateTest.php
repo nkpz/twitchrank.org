@@ -7,7 +7,7 @@ use Tests\TestCase;
 class StatsUpdateTest extends TestCase
 {
     /**
-     * A basic test example.
+     * Tests that the stats update method updates stream data properly and limits the amount of data stored.
      *
      * @return void
      */
