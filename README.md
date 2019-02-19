@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.com/nnjpp/smashstreams.svg?branch=develop)](https://travis-ci.com/nnjpp/smashstreams)
+## SmashStreams [![Build Status](https://travis-ci.com/nnjpp/smashstreams.svg?branch=develop)](https://travis-ci.com/nnjpp/smashstreams)
 
-### Live
+### Live Example
 https://www.smashstreams.com/
 
 Smashstreams stores and graphs viewer counts for the top 25 users streaming Smash Ultimate on Twitch.
@@ -35,5 +35,3 @@ docker-compose
 
 ### Run
 `docker-compose up -d`
-
-App runs on port 80
