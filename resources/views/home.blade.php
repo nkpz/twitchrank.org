@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134747651-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-134747651-1');
+        </script>
+
         <script src="//use.edgefonts.net/bebas-neue;gudea.js"></script>
         <meta charset="utf-8" />
         <meta name="csrf-token" content="{{ csrf_token() }}" />
