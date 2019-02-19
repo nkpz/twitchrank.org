@@ -15,7 +15,7 @@ describe('SmashGraphs', () => {
     moxios.install(axios);
     wrapper = shallowMount(SmashGraphs, {
         propsData: {
-        streamdata: streamData
+          streamdata: streamData
         }
     });
   });
