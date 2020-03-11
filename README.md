@@ -1,7 +1,7 @@
-## SmashStreams [![Build Status](https://travis-ci.com/nnjpp/smashstreams.svg?branch=develop)](https://travis-ci.com/nnjpp/smashstreams)
+## TwitchRank [![Build Status](https://travis-ci.com/nnjpp/smashstreams.svg?branch=develop)](https://travis-ci.com/nnjpp/smashstreams)
 
 ### Live Example
-https://www.smashstreams.com/
+https://www.twitchrank.org/
 
 Smashstreams stores and graphs viewer counts for the top 25 users streaming Smash Ultimate on Twitch.
 
